@@ -1,0 +1,16 @@
+<form [formGroup]="testForm">
+  <input formControlName="firstName" type="text">
+  <input formControlName="lastName" type="text">
+
+  <hr>
+
+  <button [disabled]="!testForm.valid" (click)="handlePrint(testForm.value)">Print</button>
+  <button [disabled]="!isEqual(testForm.value, printedFormValues)" (click)="send()">Send</button>
+</form>
+
+<pre>
+  Form value: {{testForm.value | json}}
+
+  printedFormValues: {{printedFormValues | json}}
+
+</pre>
