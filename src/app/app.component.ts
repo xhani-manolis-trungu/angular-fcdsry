@@ -39,8 +39,8 @@ export class AppComponent  {
     return true;
 }
 
-send() {
-  console.log(this.testForm.value)
+send(printedFormValues) {
+  console.log(printedFormValues)
 }
 
   

@@ -5,7 +5,7 @@
   <hr>
 
   <button [disabled]="!testForm.valid" (click)="handlePrint(testForm.value)">Print</button>
-  <button [disabled]="!isEqual(testForm.value, printedFormValues)" (click)="send()">Send</button>
+  <button [disabled]="!isEqual(testForm.value, printedFormValues)" (click)="send(printedFormValues)">Send</button>
 </form>
 
 <pre>
