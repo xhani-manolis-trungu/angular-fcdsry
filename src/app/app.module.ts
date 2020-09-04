@@ -4,10 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
+import { KeysPipe } from './keysPipe';
 
 @NgModule({
   imports:      [ BrowserModule, ReactiveFormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent, HelloComponent, KeysPipe],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

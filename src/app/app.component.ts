@@ -8,6 +8,10 @@ import {FormBuilder, Validators, FormGroup} from '@angular/forms';
 })
 export class AppComponent  {
 
+  public firstName: boolean = false;
+  public lastName: boolean = false;
+  public buttonDisabled: boolean = false;
+
   printedFormValues: Object = {};
   testForm: FormGroup = this.fb.group({
     firstName: ['', Validators.required],
@@ -41,6 +45,14 @@ export class AppComponent  {
 
 send(printedFormValues) {
   console.log(printedFormValues)
+}
+
+removeFormControls() {
+  this.testForm.removeControl('firstName')
+  this.testForm.removeControl('lastName')
+  this.firstName = !this.firstName
+  this.lastName = !this.lastName;
+  this.buttonDisabled = !this.buttonDisabled;
 }
 
   

@@ -1,11 +1,16 @@
 <form [formGroup]="testForm">
-  <input formControlName="firstName" type="text">
-  <input formControlName="lastName" type="text">
 
+  <div *ngFor="let controlName of testForm.controls | keys">
+    <ng-container *ngIf="!buttonDisabled">
+      <input [formControlName]="controlName" type="text">
+    </ng-container>
+  </div>
   <hr>
 
   <button [disabled]="!testForm.valid" (click)="handlePrint(testForm.value)">Print</button>
   <button [disabled]="!isEqual(testForm.value, printedFormValues)" (click)="send(printedFormValues)">Send</button>
+
+  <button (click)="removeFormControls()" [disabled]="buttonDisabled">Remove FormControls</button>
 </form>
 
 <pre>
